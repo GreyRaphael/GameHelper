@@ -4,13 +4,51 @@ LControl::
 
 Loop, 3
 {
+	Send {a down}
+	Sleep, % rand(50, 70)
+	Send {a up}
+	Click, right, 802, 465
+}
+
+Loop, 3
+{
+	Send {w down}
+	Sleep, % rand(50, 70)
+	Send {w up}
+}
+
+Loop, 1
+{
+	Send {d down}
+	Sleep, % rand(50, 70)
+	Send {d up}
+}
+
+
+; 因为有些点击无效，所以需要循环多次，并且每次间隔很小
+Loop, 38
+{
+	Click, 802, 465
+	Sleep, % rand(5, 10)
+}
+
+Send, e
+
+return
+
+LAlt::
+; 左边Ctrl激活Macro
+; 右快速移动3次，前移2次，左移一次，五个连击，一个大招E
+
+Loop, 3
+{
 	Send {d down}
 	Sleep, % rand(50, 70)
 	Send {d up}
 	Click, right, 802, 465
 }
 
-Loop, 2
+Loop, 3
 {
 	Send {w down}
 	Sleep, % rand(50, 70)
@@ -35,7 +73,6 @@ Loop, 38
 Send, e
 
 return
-
 
 CapsLock::
 ; CapsLock按键激活Macro
